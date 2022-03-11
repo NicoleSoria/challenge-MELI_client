@@ -14,6 +14,9 @@ import { ProductCardComponent } from './product-card/product-card.component';
     ProductsListComponent,
     SearchComponent,
     ProductCardComponent
+  ],
+  exports: [
+    SearchComponent
   ]
 })
 export class ComponentModule { }
