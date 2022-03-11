@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { ProductsModel } from '../models/product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,9 @@ import { environment } from '../../environments/environment';
 export class ProductService {
 
   private urlBase = environment.urlApi;
+
+  products: ProductsModel;
+
 
   constructor(private _http: HttpClient) { }
 
