@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-products-list',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsListComponent implements OnInit {
 
-  constructor() { }
+  query: string;
+
+  constructor(private activatedRoute: ActivatedRoute, private productService: ProductService) { }
 
   ngOnInit() {
+    this.activatedRoute.queryParams.subscribe((resp) => {
+      this.query = resp.q;
+      this.getItems();
+    })
+  }
+
+  getItems() {
+    this.productService.getItems(this.query).subscribe((resp) => {
+      console.log(resp);
+    });
   }
 
 }

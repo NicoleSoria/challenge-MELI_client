@@ -5,9 +5,12 @@ import { ProductsListComponent } from './components/products-list/products-list.
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 const routes: Routes = [
-  {path: '', component: PageComponent},
-  {path: 'items', component: ProductsListComponent},
-  {path: 'items/:id', component: ProductDetailComponent},
+  {path: '', component: PageComponent, 
+    children: [
+      {path: 'items', component: ProductsListComponent},
+      {path: 'items/:id', component: ProductDetailComponent},
+    ]
+  },
   {path: '**', component: PageComponent},
   {path: '', component: PageComponent, pathMatch: 'full'},
 

@@ -4,10 +4,12 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { ProductsListComponent } from './products-list/products-list.component';
 import { SearchComponent } from './search/search.component';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   declarations: [
     ProductDetailComponent,
