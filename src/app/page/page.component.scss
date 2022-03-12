@@ -1,15 +1,15 @@
+@import '../../styles.scss';
+
 .page {
   display: flex;
   flex-direction: column;
   max-width: 100vw;
   max-height: 100vh;
-  background-color: #EEEEEE;
+  background-color: map-get($colors , 'light-grey');
 
   &__navbar {
     width: 100%;
-    background-color: #ffe600;
+    background-color: map-get($colors, 'primary');
   } 
-
-
 }
 

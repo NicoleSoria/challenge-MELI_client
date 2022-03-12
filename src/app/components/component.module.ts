@@ -5,6 +5,7 @@ import { ProductsListComponent } from './products-list/products-list.component';
 import { SearchComponent } from './search/search.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { FormsModule } from '@angular/forms';
+import { BreadCrumbsComponent } from './bread-crumbs/bread-crumbs.component';
 
 @NgModule({
   imports: [
@@ -15,10 +16,12 @@ import { FormsModule } from '@angular/forms';
     ProductDetailComponent,
     ProductsListComponent,
     SearchComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    BreadCrumbsComponent
   ],
   exports: [
-    SearchComponent
+    SearchComponent,
+    BreadCrumbsComponent
   ]
 })
 export class ComponentModule { }
