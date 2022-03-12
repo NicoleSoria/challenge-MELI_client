@@ -15,4 +15,8 @@ export class ProductService {
     return this._http.get(`${this.urlBase}/api/items?q=${text}`)
   }
 
+  getItem(id) {
+    return this._http.get(`${this.urlBase}/api/items/${id}`)
+  }
+
 }

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ProductService } from 'src/app/services/product.service';
+import { IProduct } from '../../models/product.model';
+import { CurrencyEnum } from '../../enums/currency.enum';
 
 @Component({
   selector: 'app-product-detail',
@@ -7,9 +11,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductDetailComponent implements OnInit {
 
-  constructor() { }
+  idProduct: string;
+  product: IProduct;
+  currencyEnum = CurrencyEnum;
+
+  constructor(private activatedRoute: ActivatedRoute,
+              private productService: ProductService) { }
 
   ngOnInit() {
+
+    this.activatedRoute.params.subscribe((resp) => {
+      this.idProduct = resp.id;
+      console.log(this.idProduct);
+      this.getItem();
+    });
   }
 
+  getItem() {
+    this.productService.getItem(this.idProduct).subscribe((resp: any) => {
+      this.product = resp.item; 
+    });
+  }
 }

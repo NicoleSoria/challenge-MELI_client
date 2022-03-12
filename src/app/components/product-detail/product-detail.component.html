@@ -1,3 +1,21 @@
-<p>
-  product-detail works!
-</p>
+<div class="product" *ngIf="product">
+  <div class="detail">
+    <figure class="detail__figure">
+      <img class="detail__figure--img" [src]="product.picture" [alt]="product.title">
+    </figure>
+
+    <div class="detail__data">
+      <span class="detail__data--condition">{{product.condition}} - {{product.sold_quantity}} vendidos </span>
+      <h1 class="detail__data--title">{{product.title}}</h1>
+      <div class="price">
+        <span class="price__amount">{{currencyEnum[product.price.currency]}} {{product.price.amount}}</span>
+        <span class="price__decimals">{{product.price.decimals}}</span>
+      </div>
+      <button class="buy-button">Comprar</button>
+    </div>
+  </div>
+  <div class="description">
+    <h1 class="description__title">Descripción del producto</h1>
+    <p class="description__paragraph">{{product.description}}</p>
+  </div>
+</div>

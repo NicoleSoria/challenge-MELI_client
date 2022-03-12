@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
 import { CategoriesObsService } from '../../services/categories-obs.service';
 import { IProducts } from '../../models/product.model';
@@ -16,7 +16,8 @@ export class ProductsListComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute, 
               private productService: ProductService,
-              private categoriesObsService: CategoriesObsService) { }
+              private categoriesObsService: CategoriesObsService,
+              private router: Router) { }
 
   ngOnInit() {
     this.activatedRoute.queryParams.subscribe((resp) => {
@@ -27,10 +28,13 @@ export class ProductsListComponent implements OnInit {
 
   getItems() {
     this.productService.getItems(this.query).subscribe((resp: any) => {
-      console.log(resp);
       this.products = resp.items.splice(0, 4);
       this.categoriesObsService.toAssingCategories(resp.categories);
     });
+  }
+
+  openProduct(idProduct: string) {
+    this.router.navigate([`items/${idProduct}`]);
   }
 
 }

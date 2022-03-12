@@ -1,0 +1,81 @@
+@import '../../../styles.scss';
+
+.product {
+
+  
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+
+  &__figure {
+    width: 680px;
+    height: 680px;
+
+    &--img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__data {
+    margin: map-get($space, 'space-32' );
+    width: 400px;
+
+    &--condition {
+      font-size: map-get($font-zise, 'zise-14' );
+      color: map-get($colors, 'grey' );
+    }
+
+    &--title {
+      font-size: map-get($font-zise, 'zise-24' );
+      color: map-get($colors, 'black' );
+    }
+  }
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  margin: map-get($space, 'space-32' ) 0px;
+  
+  &__amount {
+    font-size: map-get($font-zise, 'zise-46' );
+    color: map-get($colors, 'black' );
+  }
+
+  &__decimals {
+    font-size: map-get($font-zise, 'zise-24' );
+    color: map-get($colors, 'black' );
+    margin-top: 8px;
+    font-weight: 200;
+    align-self: flex-start;
+  }
+}
+
+.buy-button {
+  width: 100%;
+  height: 48px;
+  background-color: map-get($colors, 'secondary' );
+  outline: none;
+  border: none;
+  color: map-get($colors, 'white' );
+  border-radius: 6px;
+  font-size: map-get($font-zise, 'zise-16' );
+  font-weight: 600;
+}
+
+.description {
+  margin: 0px 0px map-get($space, 'space-32' ) map-get($space, 'space-32' );
+  width: 680px;
+  &__title {
+    font-size: map-get($font-zise, 'zise-28' );
+  }
+
+  &__paragraph{
+    margin-top: map-get($space, 'space-32' );
+     font-size: map-get($font-zise, 'zise-16' );
+     color: map-get($colors, 'grey' );
+  }
+}

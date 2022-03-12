@@ -18,6 +18,10 @@
   }
 }
 
+.card:hover {
+  cursor: pointer;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -54,5 +58,6 @@
 hr {
   width: 95%;
   margin: auto;
-  border: 0.5px solid map-get($colors, 'light-grey' );
+  border: 0.2px solid map-get($colors, 'light-grey' );
+ 
 }
