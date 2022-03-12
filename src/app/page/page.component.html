@@ -4,9 +4,14 @@
   </div>
 
   <div class="page__body">
-    <app-bread-crumbs></app-bread-crumbs>
+    <div class="page__body--breadcrumbs">
+      <app-bread-crumbs></app-bread-crumbs>
+    </div>
 
-    <router-outlet></router-outlet>
+    <div class="page__body--content">
+      <router-outlet></router-outlet>
+    </div>
+      
   </div>
 
 </div>

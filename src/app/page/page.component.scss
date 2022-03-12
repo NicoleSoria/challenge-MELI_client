@@ -3,13 +3,34 @@
 .page {
   display: flex;
   flex-direction: column;
+  align-items: center;
   max-width: 100vw;
-  max-height: 100vh;
-  background-color: map-get($colors , 'light-grey');
+  height: 100%;
+  background-color: map-get($colors, 'light-grey');
 
   &__navbar {
     width: 100%;
     background-color: map-get($colors, 'primary');
   } 
+
+  &__body {
+    height: 100%;
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &--breadcrumbs {
+      margin-top: map-get($space, 'space-16' );
+      margin-bottom: map-get($space, 'space-16' );
+      align-self: flex-start
+    }
+
+    &--content {
+      width: 100%;
+      height: 500px;
+      background-color: map-get($colors, 'white' );
+    }
+  }
 }
 

@@ -1,0 +1,17 @@
+@import '../../../styles.scss';
+
+.breadcrumb {
+    display: flex;
+}
+
+.breadcrumb li+li:before {
+    padding: 8px;
+    color: map-get($colors, 'grey' );
+    content: ">";
+}
+
+li {
+   list-style: none;
+   font-size: map-get($font-zise, 'zise-14' );
+   color: map-get($colors, 'grey' )
+}

@@ -6,7 +6,7 @@ import { SearchComponent } from './search/search.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { FormsModule } from '@angular/forms';
 import { BreadCrumbsComponent } from './bread-crumbs/bread-crumbs.component';
-
+import { EmptyStateComponent } from './empty-state/empty-state.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -17,7 +17,8 @@ import { BreadCrumbsComponent } from './bread-crumbs/bread-crumbs.component';
     ProductsListComponent,
     SearchComponent,
     ProductCardComponent,
-    BreadCrumbsComponent
+    BreadCrumbsComponent,
+    EmptyStateComponent
   ],
   exports: [
     SearchComponent,

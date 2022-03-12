@@ -8,6 +8,8 @@ import { CategoriesObsService } from '../../services/categories-obs.service';
 })
 export class BreadCrumbsComponent implements OnInit {
 
+  categories: string[] = [];
+
   constructor(private categoriesObsService: CategoriesObsService ) { }
 
   ngOnInit() {
@@ -15,7 +17,8 @@ export class BreadCrumbsComponent implements OnInit {
   }
 
   getCategoriesData() {
-    this.categoriesObsService.getCategories().subscribe((resp) => console.log(resp));
+    this.categoriesObsService.getCategories().subscribe((resp) => this.categories = resp);
+    console.log(this.categories);
     
   }
 }
