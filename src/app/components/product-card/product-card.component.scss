@@ -1,0 +1,58 @@
+@import '../../../styles.scss';
+
+.card {
+  display: flex;
+
+  &__figure {
+    width: 180px;
+    height: 180px;
+    border-radius: 4px;
+    margin: map-get($space, 'space-16' );
+  
+    &--img {
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+      object-fit: contain;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin-top: map-get($space , 'space-16' );
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: map-get($space, 'space-32');
+
+    &--price {
+      font-size: map-get($font-zise , 'zise-24' );
+      margin-right: map-get($space , 'space-12' );
+    }
+
+    &--condition {
+      font-size: map-get($font-zise , 'zise-12' );
+      color: map-get($colors, 'grey' );
+      align-self: flex-end;
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    
+    &--title {
+      font-size: map-get($font-zise , 'zise-18' );
+    }
+  }
+}
+
+hr {
+  width: 95%;
+  margin: auto;
+  border: 0.5px solid map-get($colors, 'light-grey' );
+}

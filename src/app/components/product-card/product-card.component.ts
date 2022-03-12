@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IProducts } from '../../models/product.model';
+import { CurrencyEnum } from '../../enums/currency.enum';
 
 @Component({
   selector: 'app-product-card',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductCardComponent implements OnInit {
 
+  @Input() product: IProducts;
+
+  currencyEnum = CurrencyEnum;
+
   constructor() { }
 
   ngOnInit() {
+
+    console.log(this.product);
+    
   }
 
 }

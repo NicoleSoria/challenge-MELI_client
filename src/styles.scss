@@ -5,7 +5,11 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-html, body { height: 100%; }
+html, body { 
+  height: 100%; 
+  background-color: #EEEEEE;
+
+}
 
 $colors:( 'primary': #FFE600, 
           'secondary': #3483FA, 
@@ -18,6 +22,7 @@ $colors:( 'primary': #FFE600,
 
 
 $space:(
+  'space-12': 12px,
   'space-16': 16px,
   'space-32': 32px
 );

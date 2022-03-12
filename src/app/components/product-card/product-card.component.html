@@ -1,3 +1,20 @@
-<p>
-  product-card works!
-</p>
+<div class="card">
+  <figure class="card__figure">
+    <img class="card__figure--img" [src]="product.picture" [alt]="product.title">
+  </figure>
+
+  <div class="content">
+    <div class="content__header">
+      <div>
+        <span class="content__header--price">{{currencyEnum[product.price.currency]}} {{product.price.amount}}</span>
+        <img *ngIf="product.free_shipping" src="../../../assets/ic_shipping.png" alt="shipping">
+      </div>
+      <span class="content__header--condition">{{product.condition}}</span>
+    </div>
+    <div class="content__details">
+      <span class="content__details--title">{{product.title}}</span>
+      <span>Completo Unico!</span>
+    </div>
+  </div>
+</div>
+<hr>
