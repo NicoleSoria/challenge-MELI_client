@@ -19,6 +19,7 @@
   &__title {
     font-size: 24px;
     font-weight: 200;
+    color: map-get($colors , 'grey');
 
     @media screen and (max-width: $mobile) {
       font-size: 14px;

@@ -40,6 +40,10 @@
       }
     }
 
+    &--input::placeholder {
+      color: map-get($colors , 'grey');
+    }
+
     &--input:focus {
       outline: none;
     }
