@@ -5,6 +5,15 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
+
+  &__figure {
+    width: 100px;
+    height: 100px;
+
+    &--img {
+      width: 100%;
+    }
+  }
   
   &__title {
     font-size: 24px;
