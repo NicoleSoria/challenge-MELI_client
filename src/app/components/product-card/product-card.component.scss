@@ -27,6 +27,7 @@
   flex-direction: column;
   width: 70%;
   margin-top: map-get($space , 'space-16' );
+  padding-right: map-get($space, 'space-32') ;
 
   &__header {
     display: flex;
@@ -61,4 +62,29 @@ hr {
   margin: auto;
   border: 0.2px solid map-get($colors, 'light-grey' );
  
+}
+
+@media screen and (max-width: $mobile) {
+  .content {
+    flex-direction: column-reverse;
+
+    &__header {
+      flex-direction: column;
+      margin-top: map-get($space , 'space-16' );
+
+      &--price {
+        font-size: map-get($font-zise , 'zise-18' );
+      }
+
+      &--condition {
+        align-self: flex-start;
+      }
+    }
+
+    &__details {
+      &--title {
+        font-size: map-get($font-zise , 'zise-14' );
+      }
+    }
+  }
 }

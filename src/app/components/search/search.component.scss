@@ -25,6 +25,10 @@
       font-size: map-get($font-zise, 'zise-18');
       padding-left: 15px;
       border-radius: 4px 0 0 4px;
+
+      @media screen and (max-width: $mobile) {
+        font-size: map-get($font-zise, 'zise-14');
+      }
     }
 
     &--input:focus {

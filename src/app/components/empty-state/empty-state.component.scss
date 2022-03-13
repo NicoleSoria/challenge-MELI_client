@@ -9,5 +9,9 @@
   &__title {
     font-size: map-get($font-zise, 'zise-24');
     font-weight: 200;
+
+    @media screen and (max-width: $mobile) {
+      font-size: map-get($font-zise, 'zise-14');
+    }
   }
 }

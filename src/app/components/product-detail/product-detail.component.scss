@@ -11,7 +11,6 @@
 
   &__figure {
     width: 680px;
-    height: 680px;
 
     &--img {
       width: 100%;
@@ -20,7 +19,7 @@
   }
 
   &__data {
-    margin: map-get($space, 'space-32' );
+    padding: map-get($space, 'space-32' );
     width: 400px;
 
     &--condition {
@@ -29,6 +28,7 @@
     }
 
     &--title {
+      margin-top: map-get($space, 'space-16' );
       font-size: map-get($font-zise, 'zise-24' );
       color: map-get($colors, 'black' );
     }
@@ -64,11 +64,13 @@
   border-radius: 6px;
   font-size: map-get($font-zise, 'zise-16' );
   font-weight: 600;
+  cursor: pointer;
 }
 
 .description {
   margin: 0px 0px map-get($space, 'space-32' ) map-get($space, 'space-32' );
   width: 680px;
+  
   &__title {
     font-size: map-get($font-zise, 'zise-28' );
   }
@@ -78,5 +80,63 @@
     font-size: map-get($font-zise, 'zise-16' );
     color: map-get($colors, 'grey' );
     word-break: break-word;
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .detail {
+    flex-direction: column;
+
+    &__figure {
+      width: 90vw;
+      height: auto;
+  
+      &--img {
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+
+    &__data {
+      width: 80%;
+      padding: 0;
+      margin: auto;
+  
+      &--title {
+        font-size: map-get($font-zise, 'zise-16' );
+        font-weight: 200;
+      }
+    }
+  }
+
+  .price {
+    
+    &__amount {
+      font-size: map-get($font-zise, 'zise-32' );
+    }
+  
+    &__decimals {
+      font-size: map-get($font-zise, 'zise-18' );
+      font-weight: 100;
+      margin-top: 4px;
+    }
+  }
+
+  .description {
+    width: 80%;
+    margin: map-get($space, 'space-32' ) auto;
+
+    &__title {
+      font-size: map-get($font-zise, 'zise-18' );
+    }
+  
+    &__paragraph{
+      font-size: map-get($font-zise, 'zise-14' );
+    }
+  }
+
+  .buy-button {
+   margin-bottom: map-get($space, 'space-32' );
+    
   }
 }
