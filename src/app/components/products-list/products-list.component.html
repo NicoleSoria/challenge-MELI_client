@@ -1,5 +1,5 @@
-<app-empty-state *ngIf="products.length == 0" [text]="'No hay publicaciones que coincidan con tu búsqueda.'"
-  [img]="'../../../assets/not_find.png'">
+<app-empty-state *ngIf="products.length == 0 && !isLoading"
+  [text]="'No hay publicaciones que coincidan con tu búsqueda.'" [img]="'../../../assets/not_find.png'">
 </app-empty-state>
 
 <ng-template ngFor let-product [ngForOf]="products">

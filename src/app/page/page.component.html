@@ -12,7 +12,7 @@
       <app-bread-crumbs></app-bread-crumbs>
     </div>
 
-    <div *ngIf="!isLoading" class="page__body--content" [ngClass]="{'pag-loading': isLoading}">
+    <div class="page__body--content" [ngClass]="{'pag-loading': isLoading}">
       <app-empty-state *ngIf="onEmptyState()" [text]="'Busca productos, marcas y más...'"
         [img]="'../../../assets/empty_state.png'">
       </app-empty-state>
