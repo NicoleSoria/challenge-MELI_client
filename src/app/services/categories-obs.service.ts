@@ -9,7 +9,7 @@ export class CategoriesObsService {
   private categories$ = new Subject<string[]>();
 
   categories: string[];
-  
+
   constructor() { }
 
   toAssingCategories(cats: string[]): void {

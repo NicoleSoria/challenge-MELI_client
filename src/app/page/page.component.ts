@@ -12,7 +12,7 @@ export class PageComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    
+
   }
 
   onEmptyState() {

@@ -1,11 +1,13 @@
 <div class="search">
-  <img class="search__img" src="../../../assets/Logo_ML.png" alt="logo_ml" (click)="goToHome()">
+  <figure class="search__figure">
+    <img class="search__figure--img" src="../../../assets/Logo_ML.png" alt="logo_ml" (click)="goToHome()">
+  </figure>
   <form class="search__form">
     <input class="search__form--input" type="text" placeholder="Nunca dejes de buscar" name="text" [(ngModel)]="text"
       (keyup.enter)="onSearch()">
 
     <button class="search__form--button" (click)="onSearch()">
-      <img src="../../../assets/ic_Search.png" alt="">
+      <img class="search__form--button__img" src="../../../assets/ic_Search.png" alt="search">
     </button>
   </form>
 </div>

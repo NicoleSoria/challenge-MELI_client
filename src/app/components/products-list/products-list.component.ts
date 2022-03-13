@@ -14,7 +14,7 @@ export class ProductsListComponent implements OnInit {
   query: string;
   products: IProducts[] = [];
 
-  constructor(private activatedRoute: ActivatedRoute, 
+  constructor(private activatedRoute: ActivatedRoute,
               private productService: ProductService,
               private categoriesObsService: CategoriesObsService,
               private router: Router) { }
@@ -23,7 +23,7 @@ export class ProductsListComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe((resp) => {
       this.query = resp.search;
       this.getItems();
-    })
+    });
   }
 
   getItems() {

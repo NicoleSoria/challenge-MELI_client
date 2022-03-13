@@ -12,7 +12,7 @@ export class SearchComponent implements OnInit {
 
   text: string;
 
-  constructor(private router: Router, 
+  constructor(private router: Router,
               private categoriesObsService: CategoriesObsService) { }
 
   ngOnInit() {

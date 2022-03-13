@@ -8,7 +8,7 @@ import { PageComponent } from './page/page.component';
 import { ComponentModule } from './components/component.module';
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
     PageComponent
    ],

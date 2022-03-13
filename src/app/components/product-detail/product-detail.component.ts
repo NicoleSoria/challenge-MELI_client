@@ -16,7 +16,7 @@ export class ProductDetailComponent implements OnInit {
   product: IProduct;
   currencyEnum = CurrencyEnum;
   conditionEnum = ConditionEnum;
-  
+
   constructor(private activatedRoute: ActivatedRoute,
               private productService: ProductService) { }
 
@@ -30,7 +30,7 @@ export class ProductDetailComponent implements OnInit {
 
   getItem() {
     this.productService.getItem(this.idProduct).subscribe((resp: any) => {
-      this.product = resp.item; 
+      this.product = resp.item;
     });
   }
 }

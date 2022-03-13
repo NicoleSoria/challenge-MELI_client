@@ -12,11 +12,11 @@ export class ProductService {
   constructor(private _http: HttpClient) { }
 
   getItems(text) {
-    return this._http.get(`${this.urlBase}/api/items?q=${text}`)
+    return this._http.get(`${this.urlBase}/api/items?q=${text}`);
   }
 
   getItem(id) {
-    return this._http.get(`${this.urlBase}/api/items/${id}`)
+    return this._http.get(`${this.urlBase}/api/items/${id}`);
   }
 
 }

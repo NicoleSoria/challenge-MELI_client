@@ -18,6 +18,6 @@ export class BreadCrumbsComponent implements OnInit {
 
   getCategoriesData() {
     this.categoriesObsService.getCategories().subscribe((resp) => this.categories = resp);
-    
+
   }
 }
