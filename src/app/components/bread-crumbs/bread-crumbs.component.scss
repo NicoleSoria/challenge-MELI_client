@@ -12,10 +12,10 @@
 
 li {
    list-style: none;
-   font-size: map-get($font-zise, 'zise-14' );
+   font-size: 14px;
    color: map-get($colors, 'grey' );
 
    @media screen and (max-width: $mobile) {
-    font-size: map-get($font-zise, 'zise-12' );
+    font-size: 12px;
    }
 }

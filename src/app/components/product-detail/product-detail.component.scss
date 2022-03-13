@@ -1,10 +1,5 @@
 @import '../../../styles.scss';
 
-.product {
-
-  
-}
-
 .detail {
   display: flex;
   justify-content: space-between;
@@ -23,13 +18,13 @@
     width: 400px;
 
     &--condition {
-      font-size: map-get($font-zise, 'zise-14' );
+      font-size: 14px;
       color: map-get($colors, 'grey' );
     }
 
     &--title {
       margin-top: map-get($space, 'space-16' );
-      font-size: map-get($font-zise, 'zise-24' );
+      font-size: 24px;
       color: map-get($colors, 'black' );
     }
   }
@@ -41,12 +36,12 @@
   margin: map-get($space, 'space-32' ) 0px;
   
   &__amount {
-    font-size: map-get($font-zise, 'zise-46' );
+    font-size: 46px;
     color: map-get($colors, 'black' );
   }
 
   &__decimals {
-    font-size: map-get($font-zise, 'zise-24' );
+    font-size: 24px;
     color: map-get($colors, 'black' );
     margin-top: 8px;
     font-weight: 200;
@@ -62,7 +57,7 @@
   border: none;
   color: map-get($colors, 'white' );
   border-radius: 6px;
-  font-size: map-get($font-zise, 'zise-16' );
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
 }
@@ -72,12 +67,12 @@
   width: 680px;
   
   &__title {
-    font-size: map-get($font-zise, 'zise-28' );
+    font-size: 28px;
   }
 
   &__paragraph{
     margin-top: map-get($space, 'space-32' );
-    font-size: map-get($font-zise, 'zise-16' );
+    font-size: 16px;
     color: map-get($colors, 'grey' );
     word-break: break-word;
   }
@@ -103,7 +98,7 @@
       margin: auto;
   
       &--title {
-        font-size: map-get($font-zise, 'zise-16' );
+        font-size: 16px;
         font-weight: 200;
       }
     }
@@ -112,11 +107,11 @@
   .price {
     
     &__amount {
-      font-size: map-get($font-zise, 'zise-32' );
+      font-size: 32px;
     }
   
     &__decimals {
-      font-size: map-get($font-zise, 'zise-18' );
+      font-size: 18px;
       font-weight: 100;
       margin-top: 4px;
     }
@@ -127,11 +122,11 @@
     margin: map-get($space, 'space-32' ) auto;
 
     &__title {
-      font-size: map-get($font-zise, 'zise-18' );
+      font-size: 18px;
     }
   
     &__paragraph{
-      font-size: map-get($font-zise, 'zise-14' );
+      font-size: 14px;
     }
   }
 
