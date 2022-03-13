@@ -4,16 +4,21 @@
   </div>
 
   <div class="page__body">
+    <div *ngIf="isLoading" class="spinner">
+      <app-spinner></app-spinner>
+    </div>
+    
     <div class="page__body--breadcrumbs">
       <app-bread-crumbs></app-bread-crumbs>
     </div>
 
-    <div class="page__body--content">
+    <div class="page__body--content" [ngClass]="{'pag-loading': isLoading}">
       <app-empty-state *ngIf="onEmptyState()" [text]="'Busca productos, marcas y más...'"
         [img]="'../../../assets/empty_state.png'">
       </app-empty-state>
       <router-outlet></router-outlet>
     </div>
+   
 
   </div>
 

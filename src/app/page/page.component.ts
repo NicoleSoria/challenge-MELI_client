@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SpinnerObsService } from '../services/spinner-obs.service';
 
 @Component({
   selector: 'app-page',
@@ -8,11 +9,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PageComponent implements OnInit {
 
+  isLoading: boolean;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, 
+              private spinnerService: SpinnerObsService) { }
 
   ngOnInit() {
-
+    this.spinnerService.getValue().subscribe((resp) => {
+      this.isLoading = resp;
+    });
   }
 
   onEmptyState() {

@@ -7,10 +7,14 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { FormsModule } from '@angular/forms';
 import { BreadCrumbsComponent } from './bread-crumbs/bread-crumbs.component';
 import { EmptyStateComponent } from './empty-state/empty-state.component';
+import { AtomSpinnerModule, SpringSpinnerModule } from 'angular-epic-spinners';
+import { SpinnerComponent } from './spinner/spinner.component';
+
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    SpringSpinnerModule
   ],
   declarations: [
     ProductDetailComponent,
@@ -18,12 +22,14 @@ import { EmptyStateComponent } from './empty-state/empty-state.component';
     SearchComponent,
     ProductCardComponent,
     BreadCrumbsComponent,
-    EmptyStateComponent
+    EmptyStateComponent,
+    SpinnerComponent
   ],
   exports: [
     SearchComponent,
     BreadCrumbsComponent,
-    EmptyStateComponent
+    EmptyStateComponent,
+    SpinnerComponent
   ]
 })
 export class ComponentModule { }

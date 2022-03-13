@@ -27,8 +27,4 @@ export class CategoriesObsService {
     return this.categories$.asObservable();
   }
 
-  onClearCategories(): Observable<string[]> {
-    return this.categories$.asObservable();
-  }
-
 }
