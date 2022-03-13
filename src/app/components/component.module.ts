@@ -22,7 +22,8 @@ import { EmptyStateComponent } from './empty-state/empty-state.component';
   ],
   exports: [
     SearchComponent,
-    BreadCrumbsComponent
+    BreadCrumbsComponent,
+    EmptyStateComponent
   ]
 })
 export class ComponentModule { }

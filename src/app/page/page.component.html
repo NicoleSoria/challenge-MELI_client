@@ -9,9 +9,12 @@
     </div>
 
     <div class="page__body--content">
+      <app-empty-state *ngIf="onEmptyState()" [text]="'Busca productos, marcas y más...'"
+        [img]="'../../../assets/empty_state.png'">
+      </app-empty-state>
       <router-outlet></router-outlet>
     </div>
-      
+
   </div>
 
 </div>

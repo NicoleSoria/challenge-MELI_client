@@ -1,0 +1,13 @@
+@import '../../../styles.scss';
+
+.empty-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  
+  &__title {
+    font-size: map-get($font-zise, 'zise-24');
+    font-weight: 200;
+  }
+}

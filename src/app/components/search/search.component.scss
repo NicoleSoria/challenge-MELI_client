@@ -8,6 +8,10 @@
   width: 100%;
   margin: 0 auto;
 
+  &__img:hover {
+    cursor: pointer;
+  }
+
   &__form {
     width: 65%;
     display: flex;

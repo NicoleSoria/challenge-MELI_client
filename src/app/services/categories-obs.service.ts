@@ -12,13 +12,22 @@ export class CategoriesObsService {
   
   constructor() { }
 
-  toAssingCategories(cats: string[]) {
+  toAssingCategories(cats: string[]): void {
     this.categories = [];
     this.categories = cats;
     this.categories$.next(this.categories);
   }
 
+  clearCategories(): void {
+    this.categories = [];
+    this.categories$.next(this.categories);
+  }
+
   getCategories(): Observable<string[]> {
+    return this.categories$.asObservable();
+  }
+
+  onClearCategories(): Observable<string[]> {
     return this.categories$.asObservable();
   }
 

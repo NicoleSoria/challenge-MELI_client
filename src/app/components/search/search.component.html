@@ -1,5 +1,5 @@
 <div class="search">
-  <img src="../../../assets/Logo_ML.png" alt="logo_ml">
+  <img class="search__img" src="../../../assets/Logo_ML.png" alt="logo_ml" (click)="goToHome()">
   <form class="search__form">
     <input class="search__form--input" type="text" placeholder="Nunca dejes de buscar" name="text" [(ngModel)]="text"
       (keyup.enter)="onSearch()">

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-empty-state',
@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmptyStateComponent implements OnInit {
 
+  @Input() text: string;
+  @Input() img: string;
+  
   constructor() { }
 
   ngOnInit() {

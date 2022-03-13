@@ -1,3 +1,7 @@
+<app-empty-state *ngIf="products.length == 0" [text]="'No hay publicaciones que coincidan con tu búsqueda.'"
+  [img]="'../../../assets/not_find.png'">
+</app-empty-state>
+
 <ng-template ngFor let-product [ngForOf]="products">
   <app-product-card [product]="product" (click)="openProduct(product.id)"></app-product-card>
 </ng-template>

@@ -75,7 +75,8 @@
 
   &__paragraph{
     margin-top: map-get($space, 'space-32' );
-     font-size: map-get($font-zise, 'zise-16' );
-     color: map-get($colors, 'grey' );
+    font-size: map-get($font-zise, 'zise-16' );
+    color: map-get($colors, 'grey' );
+    word-break: break-word;
   }
 }
