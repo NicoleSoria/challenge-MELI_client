@@ -9,10 +9,10 @@
         <span class="content__header--price">{{currencyEnum[product.price.currency]}} {{product.price.amount}}</span>
         <img *ngIf="product.free_shipping" src="../../../assets/ic_shipping.png" alt="shipping">
       </div>
-      <span class="content__header--condition">{{product.condition}}</span>
+      <span class="content__header--condition">{{conditionEnum[product.condition]}}</span>
     </div>
     <div class="content__details">
-      <span class="content__details--title">{{product.title}}</span>
+      <h2 class="content__details--title">{{product.title}}</h2>
       <span>Completo Unico!</span>
     </div>
   </div>

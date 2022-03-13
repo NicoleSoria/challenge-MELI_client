@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
 import { IProduct } from '../../models/product.model';
 import { CurrencyEnum } from '../../enums/currency.enum';
+import { ConditionEnum } from '../../enums/condition.enum';
 
 @Component({
   selector: 'app-product-detail',
@@ -14,7 +15,8 @@ export class ProductDetailComponent implements OnInit {
   idProduct: string;
   product: IProduct;
   currencyEnum = CurrencyEnum;
-
+  conditionEnum = ConditionEnum;
+  
   constructor(private activatedRoute: ActivatedRoute,
               private productService: ProductService) { }
 

@@ -5,7 +5,8 @@
     </figure>
 
     <div class="detail__data">
-      <span class="detail__data--condition">{{product.condition}} - {{product.sold_quantity}} vendidos </span>
+      <span class="detail__data--condition">{{conditionEnum[product.condition]}} - {{product.sold_quantity}} vendidos
+      </span>
       <h1 class="detail__data--title">{{product.title}}</h1>
       <div class="price">
         <span class="price__amount">{{currencyEnum[product.price.currency]}} {{product.price.amount}}</span>
