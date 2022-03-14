@@ -7,7 +7,7 @@
     <div class="content__header">
       <div>
         <span class="content__header--price">{{currencyEnum[product.price.currency]}} {{product.price.amount}}</span>
-        <img *ngIf="product.free_shipping" src="../../../assets/ic_shipping.png" alt="shipping">
+        <img  class="content__header--img" *ngIf="product.free_shipping" src="../../../assets/ic_shipping.png" alt="shipping">
       </div>
       <span class="content__header--condition">{{conditionEnum[product.condition]}}</span>
     </div>

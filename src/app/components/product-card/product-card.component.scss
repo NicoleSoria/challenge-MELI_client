@@ -44,6 +44,11 @@
       color: map-get($colors, 'grey' );
       align-self: flex-end;
     }
+
+    &--img {
+      width: 18px;
+      height: 18px;
+    }
   }
 
   &__details {
