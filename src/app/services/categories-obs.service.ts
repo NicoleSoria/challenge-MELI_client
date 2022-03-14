@@ -6,6 +6,12 @@ import { Observable, Subject } from 'rxjs';
 })
 export class CategoriesObsService {
 
+  /**
+   * categories$ es un observador, el cual es expuesto con la función getCategories.
+   * En este caso lo utilizo para poder centralizar y que sea mas facil la conexión de los componentes,
+   * especificamente el componente que muestra las categorias, ya que cambian con cada busqueda que se realiza
+   */
+
   private categories$ = new Subject<string[]>();
 
   categories: string[];
@@ -24,7 +30,7 @@ export class CategoriesObsService {
   }
 
   getCategories(): Observable<string[]> {
-    return this.categories$.asObservable();
+    return this.categories$;
   }
 
 }
