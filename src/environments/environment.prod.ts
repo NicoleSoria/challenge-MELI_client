@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  urlApi: process.env.URL_API
+  urlApi: 'https://meli-challenge-server-soria.herokuapp.com'
 };
