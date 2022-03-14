@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 
+/**
+ * Servicio para el manejo del spinner, aca utilice obserbables
+ */
 @Injectable({
   providedIn: 'root'
 })

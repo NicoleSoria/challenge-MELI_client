@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProductService } from '../../services/product.service';
 import { CategoriesObsService } from '../../services/categories-obs.service';
 
 @Component({

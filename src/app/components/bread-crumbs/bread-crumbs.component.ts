@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { CategoriesObsService } from '../../services/categories-obs.service';
 
 @Component({
@@ -6,9 +7,10 @@ import { CategoriesObsService } from '../../services/categories-obs.service';
   templateUrl: './bread-crumbs.component.html',
   styleUrls: ['./bread-crumbs.component.scss']
 })
-export class BreadCrumbsComponent implements OnInit {
+export class BreadCrumbsComponent implements OnInit, OnDestroy {
 
   categories: string[] = [];
+  categorySuscription: Subscription = null;
 
   constructor(private categoriesObsService: CategoriesObsService ) { }
 
@@ -16,8 +18,11 @@ export class BreadCrumbsComponent implements OnInit {
     this.getCategoriesData();
   }
 
-  getCategoriesData() {
-    this.categoriesObsService.getCategories().subscribe((resp) => this.categories = resp);
+  ngOnDestroy(): void {
+    this.categorySuscription.unsubscribe();
+  }
 
+  getCategoriesData() {
+    this.categorySuscription = this.categoriesObsService.getCategories().subscribe((resp) => this.categories = resp);
   }
 }
