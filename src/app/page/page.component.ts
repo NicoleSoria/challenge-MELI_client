@@ -23,7 +23,7 @@ export class PageComponent implements OnInit, OnDestroy {
     });
   }
 
-  // Al destruirse el componente cierro la subcripcion para evitar que se siga notificando a este componente
+  // Al destruirse el componente cierro la subcripcion para evitar suscripciones colgadas
   ngOnDestroy(): void {
     this.loadingSuscription.unsubscribe();
   }

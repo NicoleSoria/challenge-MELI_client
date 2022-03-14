@@ -12,6 +12,7 @@ export class ProductCardComponent implements OnInit {
 
   @Input() product: IProducts;
 
+  //Enums
   currencyEnum = CurrencyEnum;
   conditionEnum = ConditionEnum;
 

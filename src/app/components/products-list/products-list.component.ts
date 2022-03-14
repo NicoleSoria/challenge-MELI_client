@@ -23,6 +23,8 @@ export class ProductsListComponent implements OnInit {
     private spinnerObsService: SpinnerObsService) { }
 
   ngOnInit() {
+   
+    // Obtengo de la query de la ruta el texto a buscar
     this.activatedRoute.queryParams.subscribe((resp) => {
       this.query = resp.search;
       this.getItems();
@@ -31,8 +33,11 @@ export class ProductsListComponent implements OnInit {
   }
 
   getItems() {
+    // Llamo al servicio que consulta la api para la busqueda de productos que coincidan con el texto ingresdo
     this.productService.getItems(this.query).subscribe((resp: any) => {
       this.products = resp.items.splice(0, 4);
+
+      // Asigno las categorias correspondientes a la respuesta de la consulta para que sean notificadas a sus suscriptores
       this.categoriesObsService.toAssingCategories(resp.categories);
     });
   }
@@ -41,6 +46,7 @@ export class ProductsListComponent implements OnInit {
     this.router.navigate([`items/${idProduct}`]);
   }
 
+  // Función para ocultar el empty state si el loading esta activo
   showEmptySatate() {
     this.spinnerObsService.getValue().subscribe((resp) => {
       this.isLoading = resp;

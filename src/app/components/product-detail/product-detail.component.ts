@@ -14,6 +14,8 @@ export class ProductDetailComponent implements OnInit {
 
   idProduct: string;
   product: IProduct;
+
+  //Enums
   currencyEnum = CurrencyEnum;
   conditionEnum = ConditionEnum;
 
@@ -21,7 +23,8 @@ export class ProductDetailComponent implements OnInit {
               private productService: ProductService) { }
 
   ngOnInit() {
-
+    
+    // Obtengo de la ruta el id del producto a buscar
     this.activatedRoute.params.subscribe((resp) => {
       this.idProduct = resp.id;
       this.getItem();

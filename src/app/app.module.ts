@@ -2,11 +2,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
+// Interceptor
+import { SpinnerInterceptor } from './interceptors/spinner.interceptor';
+
+// Modulos 
 import { AppRoutingModule } from './app-routing.module';
+import { ComponentModule } from './components/component.module';
+
+// Componentes
 import { AppComponent } from './app.component';
 import { PageComponent } from './page/page.component';
-import { ComponentModule } from './components/component.module';
-import { SpinnerInterceptor } from './interceptors/spinner.interceptor';
 
 @NgModule({
   declarations: [

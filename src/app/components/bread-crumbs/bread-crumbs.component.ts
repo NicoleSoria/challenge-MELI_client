@@ -18,6 +18,7 @@ export class BreadCrumbsComponent implements OnInit, OnDestroy {
     this.getCategoriesData();
   }
 
+  // Al destruirse el componente cierro la subcripcion para evitar suscripciones colgadas
   ngOnDestroy(): void {
     this.categorySuscription.unsubscribe();
   }
