@@ -26,10 +26,8 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit() {
 
     // Obtengo de la ruta el id del producto a buscar
-    this.activatedRoute.params.subscribe((resp) => {
-      this.idProduct = resp.id;
-      this.getItem();
-    });
+    this.idProduct = this.activatedRoute.snapshot.params.id;
+    this.getItem();
   }
 
   getItem() {

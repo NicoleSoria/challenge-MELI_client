@@ -26,11 +26,9 @@ export class ProductsListComponent implements OnInit {
   ngOnInit() {
 
     // Obtengo de la query de la ruta el texto a buscar
-    this.activatedRoute.queryParams.subscribe((resp) => {
-      this.query = resp.search;
-      this.getItems();
-      this.showEmptySatate();
-    });
+    this.query = this.activatedRoute.snapshot.queryParams.search;
+    this.getItems();
+    this.showEmptySatate();
   }
 
   getItems() {

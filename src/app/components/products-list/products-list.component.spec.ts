@@ -5,6 +5,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { ProductService } from '../../services/product.service';
 import { CategoriesObsService } from '../../services/categories-obs.service';
 import { ProductsTestingService } from './stups/products-list.stups';
+import { ActivatedRoute } from '@angular/router';
 
 describe('ProductsListComponent', () => {
   let component: ProductsListComponent;
@@ -18,7 +19,13 @@ describe('ProductsListComponent', () => {
       declarations: [ProductsListComponent],
       imports: [RouterTestingModule],
       providers: [
-        { provide: ProductService, useClass: ProductsTestingService }
+        { provide: ProductService, useClass: ProductsTestingService },
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            snapshot: { queryParams: { search: 'mesa' } }
+          }
+        }
       ]
     })
       .compileComponents();
@@ -35,6 +42,7 @@ describe('ProductsListComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+    expect(component.query).toEqual('mesa');
   });
 
   it('test getItems', () => {

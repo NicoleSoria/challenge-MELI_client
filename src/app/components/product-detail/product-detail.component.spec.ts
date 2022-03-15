@@ -6,6 +6,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { ProductService } from '../../services/product.service';
 import { ProductTestingService } from './stups/product-detail.stups';
 import { IProduct } from '../../models/product.model';
+import { ActivatedRoute } from '@angular/router';
 
 describe('ProductDetailComponent', () => {
   let component: ProductDetailComponent;
@@ -17,7 +18,13 @@ describe('ProductDetailComponent', () => {
       declarations: [ProductDetailComponent],
       imports: [RouterTestingModule],
       providers: [
-        { provide: ProductService, useClass: ProductTestingService }
+        { provide: ProductService, useClass: ProductTestingService },
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            snapshot: { params: { id: '12345' } }
+          }
+        }
       ]
     })
       .compileComponents();
@@ -32,10 +39,10 @@ describe('ProductDetailComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+    expect(component.idProduct).toEqual('12345');
   });
 
   it('test getItem', () => {
-    component.idProduct = '12345';
     spyOn(productHttp, 'getItem').and.callThrough();
     component.getItem();
     expect(typeof component.product).toBe('object')
