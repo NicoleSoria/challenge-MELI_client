@@ -1,6 +1,6 @@
 # Client
 
-Desarrollo de front-end para challenge para mercado libre 
+Desarrollo de front-end para challenge de mercado libre 
 
 This project was generated with Angular CLI  version 10.0.6.
 
