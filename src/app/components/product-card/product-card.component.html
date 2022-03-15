@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" *ngIf="product">
   <figure class="card__figure">
     <img class="card__figure--img" [src]="product.picture" [alt]="product.title">
   </figure>
@@ -7,7 +7,8 @@
     <div class="content__header">
       <div>
         <span class="content__header--price">{{currencyEnum[product.price.currency]}} {{product.price.amount}}</span>
-        <img  class="content__header--img" *ngIf="product.free_shipping" src="../../../assets/ic_shipping.png" alt="shipping">
+        <img class="content__header--img" *ngIf="product.free_shipping" src="../../../assets/ic_shipping.png"
+          alt="shipping">
       </div>
       <span class="content__header--condition">{{conditionEnum[product.condition]}}</span>
     </div>

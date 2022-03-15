@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { Observable } from 'rxjs';
 
 /**
  * Servicio para peticiones relacionadas a productos
@@ -15,11 +16,11 @@ export class ProductService {
 
   constructor(private _http: HttpClient) { }
 
-  getItems(text) {
+  getItems(text): Observable<Object> {
     return this._http.get(`${this.urlBase}/api/items?q=${text}`);
   }
 
-  getItem(id) {
+  getItem(id): Observable<Object> {
     return this._http.get(`${this.urlBase}/api/items/${id}`);
   }
 

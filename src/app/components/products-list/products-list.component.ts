@@ -4,6 +4,7 @@ import { ProductService } from 'src/app/services/product.service';
 import { CategoriesObsService } from '../../services/categories-obs.service';
 import { IProducts } from '../../models/product.model';
 import { SpinnerObsService } from '../../services/spinner-obs.service';
+import { ListResponseModel } from '../../models/response.model';
 
 @Component({
   selector: 'app-products-list',
@@ -23,7 +24,7 @@ export class ProductsListComponent implements OnInit {
     private spinnerObsService: SpinnerObsService) { }
 
   ngOnInit() {
-   
+
     // Obtengo de la query de la ruta el texto a buscar
     this.activatedRoute.queryParams.subscribe((resp) => {
       this.query = resp.search;
@@ -34,7 +35,7 @@ export class ProductsListComponent implements OnInit {
 
   getItems() {
     // Llamo al servicio que consulta la api para la busqueda de productos que coincidan con el texto ingresdo
-    this.productService.getItems(this.query).subscribe((resp: any) => {
+    this.productService.getItems(this.query).subscribe((resp: ListResponseModel) => {
       this.products = resp.items.splice(0, 4);
 
       // Asigno las categorias correspondientes a la respuesta de la consulta para que sean notificadas a sus suscriptores
