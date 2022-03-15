@@ -6,6 +6,7 @@ import { ProductService } from '../../services/product.service';
 import { CategoriesObsService } from '../../services/categories-obs.service';
 import { ProductsTestingService } from './stups/products-list.stups';
 import { ActivatedRoute, Router } from '@angular/router';
+import { of } from 'rxjs';
 
 describe('ProductsListComponent', () => {
   let component: ProductsListComponent;
@@ -23,7 +24,7 @@ describe('ProductsListComponent', () => {
         {
           provide: ActivatedRoute,
           useValue: {
-            snapshot: { queryParams: { search: 'mesa' } }
+            queryParams: of({ search: 'mesa' })
           }
         },
         { provide: Router, useValue: routerSpy }

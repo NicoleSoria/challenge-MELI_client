@@ -7,6 +7,7 @@ import { ProductService } from '../../services/product.service';
 import { ProductTestingService } from './stups/product-detail.stups';
 import { IProduct } from '../../models/product.model';
 import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
 
 describe('ProductDetailComponent', () => {
   let component: ProductDetailComponent;
@@ -22,7 +23,7 @@ describe('ProductDetailComponent', () => {
         {
           provide: ActivatedRoute,
           useValue: {
-            snapshot: { params: { id: '12345' } }
+            params: of({ id: '12345' })
           }
         }
       ]
