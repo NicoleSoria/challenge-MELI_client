@@ -5,14 +5,14 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { ProductService } from '../../services/product.service';
 import { CategoriesObsService } from '../../services/categories-obs.service';
 import { ProductsTestingService } from './stups/products-list.stups';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 describe('ProductsListComponent', () => {
   let component: ProductsListComponent;
   let fixture: ComponentFixture<ProductsListComponent>;
   let productHttp: ProductService;
   let categoryService: CategoriesObsService;
-
+  let routerSpy = { navigate: jasmine.createSpy('navigate') };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -25,7 +25,8 @@ describe('ProductsListComponent', () => {
           useValue: {
             snapshot: { queryParams: { search: 'mesa' } }
           }
-        }
+        },
+        { provide: Router, useValue: routerSpy }
       ]
     })
       .compileComponents();
@@ -51,5 +52,11 @@ describe('ProductsListComponent', () => {
     component.getItems();
     expect(component.products.length).toEqual(4);
     expect(categoryService.toAssingCategories).toHaveBeenCalled();
+  });
+
+  it('openProduct', () => {
+    let idProduct = '12345'
+    component.openProduct(idProduct)
+    expect(routerSpy.navigate).toHaveBeenCalledWith([`items/${idProduct}`])
   });
 });
