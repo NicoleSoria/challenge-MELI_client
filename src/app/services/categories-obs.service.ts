@@ -14,7 +14,7 @@ export class CategoriesObsService {
    * En este caso lo utilizo para poder centralizar y que sea mas facil la conexión de los componentes,
    * especificamente el componente que muestra las categorias, ya que cambian con cada busqueda que se realiza
   */
-  private categories$ = new Subject<string[]>();
+  public categories$ = new Subject<string[]>();
 
   categories: string[];
 
