@@ -18,6 +18,20 @@ export class SearchComponent implements OnInit {
   }
 
   onSearch() {
+    if(this.text.toUpperCase().slice(0, 3) == 'MLA') {
+      this.onSearchItem();
+    }
+    else {
+      this.onSearchItems();
+    }
+  }
+
+  onSearchItem() {
+    this.router.navigate([`/items/${this.text.toUpperCase()}`]);
+  }
+
+  
+  onSearchItems() {
     this.router.navigate(['/items'], {queryParams: {search: this.text}});
   }
 
