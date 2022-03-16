@@ -56,8 +56,8 @@ describe('ProductsListComponent', () => {
   });
 
   it('openProduct', () => {
-    let idProduct = '12345'
-    component.openProduct(idProduct)
-    expect(routerSpy.navigate).toHaveBeenCalledWith([`items/${idProduct}`])
+    let idProduct = '12345';
+    component.openProduct(idProduct);
+    expect(routerSpy.navigate).toHaveBeenCalledWith([`items/${idProduct}`]);
   });
 });

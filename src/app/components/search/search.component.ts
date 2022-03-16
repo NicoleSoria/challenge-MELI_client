@@ -12,27 +12,22 @@ export class SearchComponent implements OnInit {
   text: string;
 
   constructor(private router: Router,
-              private categoriesObsService: CategoriesObsService) { }
+    private categoriesObsService: CategoriesObsService) { }
 
   ngOnInit() {
   }
 
   onSearch() {
-    if(this.text.toUpperCase().slice(0, 3) == 'MLA') {
-      this.onSearchItem();
-    }
-    else {
-      this.onSearchItems();
-    }
+    this.text.toUpperCase().startsWith('MLA') ? this.onSearchItem() : this.onSearchItems();
   }
 
   onSearchItem() {
     this.router.navigate([`/items/${this.text.toUpperCase()}`]);
   }
 
-  
+
   onSearchItems() {
-    this.router.navigate(['/items'], {queryParams: {search: this.text}});
+    this.router.navigate(['/items'], { queryParams: { search: this.text } });
   }
 
   goToHome() {

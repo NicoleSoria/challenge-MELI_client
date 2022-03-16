@@ -4,8 +4,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // Interceptor
 import { SpinnerInterceptor } from './interceptors/spinner.interceptor';
-import { ErrorInterceptor } from './interceptors/error.interceptor';
-
 
 // Modulos 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,7 +17,7 @@ import { PageComponent } from './page/page.component';
   declarations: [
     AppComponent,
     PageComponent
-   ],
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -27,8 +25,7 @@ import { PageComponent } from './page/page.component';
     HttpClientModule
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
+    { provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
