@@ -18,13 +18,14 @@ export class SearchComponent implements OnInit {
   }
 
   onSearch() {
-    this.text.toUpperCase().startsWith('MLA') ? this.onSearchItem() : this.onSearchItems();
+    this.categoriesObsService.clearCategories();
+    let cod = parseInt(this.text.slice(3));
+    (this.text.toUpperCase().startsWith('MLA') && !isNaN(cod)) ? this.onSearchItem() : this.onSearchItems();
   }
 
   onSearchItem() {
     this.router.navigate([`/items/${this.text.toUpperCase()}`]);
   }
-
 
   onSearchItems() {
     this.router.navigate(['/items'], { queryParams: { search: this.text } });

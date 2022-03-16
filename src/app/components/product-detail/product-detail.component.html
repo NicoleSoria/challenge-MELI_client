@@ -1,4 +1,4 @@
-<app-empty-state *ngIf="!product" [text]="'No hay publicaciones que coincidan con tu búsqueda.'"
+<app-empty-state *ngIf="!product && !isLoading" [text]="'No hay publicaciones que coincidan con tu búsqueda.'"
   [img]="'../../../assets/not_find.png'">
 </app-empty-state>
 
